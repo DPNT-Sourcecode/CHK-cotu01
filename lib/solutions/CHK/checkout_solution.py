@@ -3,7 +3,7 @@
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus):
-    SKU=['A','B','C','D','E']
+    SKU=['A','B','C','D','E','F']
     sku_dic={}
     skus=tuple(skus)
     for i in skus:
@@ -32,7 +32,8 @@ def checkout(skus):
         elif i=='E':
             value+=sku_dic[i]*40
         elif i=='F':
-            value+=sku_dic[i]%3*20+sku_dic[i]//3*10
+            value+=sku_dic[i]%3*10+sku_dic[i]//3*20
     return value
+
 
 
