@@ -10,7 +10,7 @@ def checkout(skus):
         if i not in SKU:
             return -1
         if i not in sku_dic:
-            sku_dic[i]=0
+            sku_dic[i]=1
         else:
             sku_dic[i]+=1
     value=0
@@ -24,4 +24,5 @@ def checkout(skus):
         elif i=='B':
             value+=sku_dic[i]%2*30+sku_dic[i]//2*45
     return value
+
 
