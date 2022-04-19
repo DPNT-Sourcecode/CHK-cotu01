@@ -1,9 +1,4 @@
-
-
-# noinspection PyUnusedLocal
-# skus = unicode string
 def checkout(skus):
-    def checkout(skus):
     sku_dic={}
     skus=tuple(skus)
     for i in skus:
@@ -44,20 +39,22 @@ def checkout(skus):
         left=quantity%k
         value+=quantity//k*v
         i.sort(key=lambda x:x[1])
-        flag=0
+        if left!=0:
+            flag=0
+        else:
+            flag=1
         for j in i:
             if j[0] in sku_dic:
                 if flag==1:
                     sku_dic[j[0]]=0
                     continue
                 if sku_dic[j[0]]>=left:
-                    sku_dic[j[0]]-=left
+                    sku_dic[j[0]]=left
                     flag=1
                 else:
                     left-=sku_dic[j[0]]
-                    sku_dic[j]=0
+                    sku_dic[j[0]]=0
                     flag=0
-
     for i in sku_dic:
         value+=price[i]*sku_dic[i]
     return value
