@@ -34,6 +34,3 @@ def checkout(skus):
         elif i=='F':
             value+=sku_dic[i]%3*10+sku_dic[i]//3*20
     return value
-
-
-
