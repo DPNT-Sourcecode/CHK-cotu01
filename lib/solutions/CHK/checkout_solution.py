@@ -28,6 +28,3 @@ def checkout(skus):
         elif i=='E':
             value+=sku_dic[i]*40
     return value
-
-
-
