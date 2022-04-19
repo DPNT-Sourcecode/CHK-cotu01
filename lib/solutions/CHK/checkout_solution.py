@@ -34,7 +34,7 @@ def checkout(skus):
     ]
     value=0
     for k,i,v in policy3:
-        quantity=sum([sku_dic[j] for j in [x[0] for x in i]])
+        quantity=sum([sku_dic[j] for j in [x[0] for x in i] if j in sku_dic])
         left=quantity%k
         value+=quantity//k*v
         i.sort(key=lambda x:x[1])
