@@ -32,7 +32,6 @@ def checkout(skus):
     policy3=[
         (3,[('S',20),('T',20),('X',17),('Y',20),('Z',21)],45)
     ]
-
     value=0
     for k,i,v in policy3:
         quantity=sum([sku_dic[j] for j in [x[0] for x in i]])
@@ -53,7 +52,6 @@ def checkout(skus):
                     flag=1
                 else:
                     left-=sku_dic[j[0]]
-                    sku_dic[j[0]]=0
                     flag=0
     for i in sku_dic:
         value+=price[i]*sku_dic[i]
